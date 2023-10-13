@@ -12,8 +12,13 @@ const ProductCard = ({product, deleteHandler,editHandler, viewHandler}) => {
         </CardHeader>
         <CardBody>
           <div className='costContainer d-flex justify-content-between align-items-center'>
-            <p className='text-success'>Price: {product.price}</p>
-            <p className='text-danger'>Off: {product.discountPercentage}%</p>
+            <div className="leftContainer">
+            <p className='text-success'>Price: ${((product.price - (product.price*product.discountPercentage * 0.01)).toFixed(2))}</p>
+            </div>
+            <div className="rightContainer d-flex">
+            <p className='text-secondary line-through me-1'> <del> ${product.price}</del> </p>
+            <p className='text-danger'> {-product.discountPercentage}%</p>
+            </div>
           </div>
           <p className='d-flex flex-column text-start'>Description: <span>{product.description.slice(0,25)+'...'}</span> </p>
         </CardBody>

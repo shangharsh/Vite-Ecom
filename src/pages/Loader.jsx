@@ -1,9 +1,10 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Spinner } from 'react-bootstrap';
 
 const Loader = () => {
   return (
-    <div>Loading................</div>
+    <Spinner animation="border" role="status"/>
   )
 }
 

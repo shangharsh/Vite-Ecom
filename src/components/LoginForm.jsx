@@ -23,6 +23,7 @@ const Login = () => {
     .then((res) => {
       console.log(res)
       if(res.data.status){
+        localStorage.setItem('isLoggedIn', true);
         navigate('/products');
         successToast(res.data.message);
       }
