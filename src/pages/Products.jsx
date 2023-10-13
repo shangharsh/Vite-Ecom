@@ -6,6 +6,7 @@ import { Button, Form } from 'react-bootstrap';
 import AddProduct from '../components/AddProduct';
 import EditProduct from '../components/EditProduct';
 import ViewProduct from '../components/ViewProduct';
+import { successToast } from '../services/toast.service';
 
 const Products = () => {
 
@@ -73,6 +74,8 @@ const Products = () => {
         return prod.id !== id;
     })
     setProducts(filteredProducts);
+  successToast('Product Deleted.');
+
 };
 
 //Add Product
@@ -97,6 +100,7 @@ const addProductHandler =(e)=>{
   e.preventDefault();
   setProducts([product, ...products]);
   setShow(false);
+  successToast('Product Added Successfully.');
 };
 
 //Edit Product
@@ -127,6 +131,7 @@ const editProductHandler =(e, id)=>{
   })
   setProducts(finalData);
   setShowEdit(false);
+  successToast('Product Edited Successfully.');
 };
 
 //View product

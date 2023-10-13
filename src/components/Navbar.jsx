@@ -1,7 +1,16 @@
-import {Container,Form,Nav,Navbar,NavDropdown} from 'react-bootstrap';
-import {Link} from 'react-router-dom';
+import {Button, Container,Nav,Navbar,NavDropdown} from 'react-bootstrap';
+import {Link, useNavigate} from 'react-router-dom';
+import { successToast } from '../services/toast.service';
 
 const NavMenu = () =>{
+
+  const navigate = useNavigate();
+
+  const handleLogOut = () =>{
+    localStorage.removeItem('isLoggedIn');
+    navigate('/login');
+    successToast('Logout Successfully.')
+  }
     return(
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
@@ -30,6 +39,7 @@ const NavMenu = () =>{
                 <Link to='/live-counter' className='text-decoration-none text-dark'>Live Counter</Link>
               </NavDropdown.Item>
             </NavDropdown>
+            <Button onClick={handleLogOut}>Logout</Button>
           </Nav>
         </Navbar.Collapse>
       </Container>

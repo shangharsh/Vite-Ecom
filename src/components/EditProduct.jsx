@@ -12,7 +12,7 @@ const EditProduct = ({showEdit, handleEditClose, handleEditChange, editProductHa
         <Form>
       <Form.Group className="mb-3" controlId="formBasicImage">
         <Form.Label>Product Image</Form.Label>
-        <Form.Control type="image" name='thumbnail' placeholder='Image Here' readOnly src={editedProduct.thumbnail} onChange={handleEditChange}/>       
+        <Form.Control type="image" name='thumbnail' placeholder='Image Here' src={editedProduct.thumbnail} onChange={handleEditChange} disabled/>       
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicTitle">

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Modal, Form } from 'react-bootstrap'
+import { Button, Modal, Form, Image } from 'react-bootstrap'
 
 const AddProduct = ({show, handleClose, handleChange, addProductHandler}) => {
   return (
@@ -11,7 +11,8 @@ const AddProduct = ({show, handleClose, handleChange, addProductHandler}) => {
         <Form>
       <Form.Group className="mb-3" controlId="formBasicImage">
         <Form.Label>Product Image</Form.Label>
-        <Form.Control type="text" name='thumbnail' placeholder='Image Here' onChange={handleChange}/>       
+        <Form.Control type="text" name='thumbnail' placeholder='Image Here' onChange={handleChange}/>
+       
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicTitle">
