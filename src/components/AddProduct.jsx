@@ -28,16 +28,7 @@ const AddProduct = ({show, handleClose, handleChange, addProductHandler}) => {
         <Form.Control type="text" name='discountPercentage' placeholder='Discount Here' onChange={handleChange}/>
       </Form.Group>
       </Form.Group>
-      <Form.Group className='row'>
-      <Form.Group className="mb-3 col-6" controlId="formBasicTitle">
-        <Form.Label>Discounted Amount</Form.Label>
-        <Form.Control type="text" name='price' readOnly placeholder='Price Here' onChange={handleChange}/>
-      </Form.Group>
-      <Form.Group className="mb-3 col-6" controlId="formBasicTitle">
-        <Form.Label>Price</Form.Label>
-        <Form.Control type="text" name='discountPercentage' readOnly placeholder='Discount Here' onChange={handleChange}/>
-      </Form.Group>
-      </Form.Group>
+      
       <Form.Group className="mb-3" controlId="formBasicDescription">
         <Form.Label>Product Description</Form.Label>
         <Form.Control as='textarea' name='description' placeholder='Description Here' onChange={handleChange}/>

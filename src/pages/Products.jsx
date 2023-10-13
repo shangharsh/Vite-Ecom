@@ -164,7 +164,7 @@ const filterCategory=(data)=>{
       <>
       <div className="container mt-2 d-flex justify-content-between">
       <Button variant='primary' onClick={showModal}>Add product</Button>
-      <Form.Control className='w-25' type='search' name='search' placeholder='Type Keyword to Search'/>
+      <Form.Control className='w-25' type='search' name='search' placeholder='Type Keyword to Search' onChange={searchProducts}/>
       <Form.Select className='w-25' onChange={(e)=>filterCategory(e.target.value)}>
         <option value=''>Filter By Category</option>
         {categories.map((val,i)=>{

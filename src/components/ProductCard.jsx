@@ -1,5 +1,6 @@
 import React from 'react'
 import {Card,CardHeader,CardBody,CardFooter,Button} from 'react-bootstrap';
+import { returnTotal } from '../utils/helper';
 
 
 const ProductCard = ({product, deleteHandler,editHandler, viewHandler}) => {
@@ -13,7 +14,7 @@ const ProductCard = ({product, deleteHandler,editHandler, viewHandler}) => {
         <CardBody>
           <div className='costContainer d-flex justify-content-between align-items-center'>
             <div className="leftContainer">
-            <p className='text-success'>Price: ${((product.price - (product.price*product.discountPercentage * 0.01)).toFixed(2))}</p>
+            <p className='text-success'>Price: ${returnTotal(product)}</p>
             </div>
             <div className="rightContainer d-flex">
             <p className='text-secondary line-through me-1'> <del> ${product.price}</del> </p>
