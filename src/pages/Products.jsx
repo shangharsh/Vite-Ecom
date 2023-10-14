@@ -7,6 +7,7 @@ import AddProduct from '../components/AddProduct';
 import EditProduct from '../components/EditProduct';
 import ViewProduct from '../components/ViewProduct';
 import { successToast } from '../services/toast.service';
+import { useNavigate } from 'react-router-dom';
 
 const Products = () => {
 
@@ -41,6 +42,9 @@ const Products = () => {
 
   //state for viewing products.
   const [showView,setShowView] = useState(false);
+
+  //Navigation.
+  const navigate = useNavigate();
 
   //Adding the url to the variable.
   const URL = import.meta.env.VITE_BACKEND_URL;
@@ -164,9 +168,17 @@ const filterCategory=(data)=>{
   }
 }
 
+const handleLogOut = () =>{
+  localStorage.removeItem('isLoggedIn');
+  navigate('/');
+  successToast('Logout Successfully.')
+}
 
   return (
       <>
+      <div className="buttonContainer text-center mt-2"> 
+      <Button onClick={handleLogOut}>Logout</Button>
+      </div>
       <div className="container mt-2 d-flex justify-content-between">
       <Button variant='primary' onClick={showModal}>Add product</Button>
       <Form.Control className='w-25' type='search' name='search' placeholder='Type Keyword to Search' onChange={searchProducts}/>

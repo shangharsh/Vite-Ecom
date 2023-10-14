@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Modal, Form, Image } from 'react-bootstrap'
+import { Button, Modal, Form } from 'react-bootstrap'
 
 const AddProduct = ({show, handleClose, handleChange, addProductHandler}) => {
   return (

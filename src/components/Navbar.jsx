@@ -2,15 +2,8 @@ import {Button, Container,Nav,Navbar,NavDropdown} from 'react-bootstrap';
 import {Link, useNavigate} from 'react-router-dom';
 import { successToast } from '../services/toast.service';
 
+
 const NavMenu = () =>{
-
-  const navigate = useNavigate();
-
-  const handleLogOut = () =>{
-    localStorage.removeItem('isLoggedIn');
-    navigate('/login');
-    successToast('Logout Successfully.')
-  }
     return(
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
@@ -20,8 +13,8 @@ const NavMenu = () =>{
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link as={Link} to="/login">Login</Nav.Link>
-            <Nav.Link as={Link} to="/register">Register</Nav.Link>
+            {/* <Nav.Link as={Link} to="/login">Login</Nav.Link> */}
+            {/* <Nav.Link as={Link} to="/register">Register</Nav.Link> */}
             <NavDropdown title="More" id="basic-nav-dropdown" className='text-secondary'>
               <NavDropdown.Item>
                 <Link to='/users' className='text-decoration-none text-dark'>Users Details</Link>
@@ -39,7 +32,6 @@ const NavMenu = () =>{
                 <Link to='/live-counter' className='text-decoration-none text-dark'>Live Counter</Link>
               </NavDropdown.Item>
             </NavDropdown>
-            <Button onClick={handleLogOut}>Logout</Button>
           </Nav>
         </Navbar.Collapse>
       </Container>

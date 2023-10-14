@@ -32,11 +32,11 @@ const ViewProduct = ({showView, handleViewClose, editedProduct }) => {
       <Form.Group className='row'>
       <Form.Group className="mb-3 col-6" controlId="formBasicTitle">
         <Form.Label>Discounted Amount</Form.Label>
-        <Form.Control type="text" name='price' readOnly placeholder='Price Here' value={"$"+returnTotal(editedProduct)}disabled/>
+        <Form.Control type="text" name='price' readOnly placeholder='Discounted Amount' value={"$"+returnDiscountAmount(editedProduct)} disabled/>
       </Form.Group>
       <Form.Group className="mb-3 col-6" controlId="formBasicTitle">
         <Form.Label>Total Price</Form.Label>
-        <Form.Control type="text" name='discountPercentage' readOnly placeholder='Discount Here' value={"$"+returnDiscountAmount(editedProduct)}disabled/>
+        <Form.Control type="text" name='discountPercentage' readOnly placeholder='Total Price' value={"$"+returnTotal(editedProduct)} disabled/>
       </Form.Group>
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicDescription">

@@ -1,5 +1,5 @@
 export const returnTotal = ({price, discountPercentage}) =>{
-    return returnToFixed(price - price * discountPercentage * 0.01);
+    return returnToFixed(price - (price * discountPercentage * 0.01));
 }
 
 export const returnDiscountAmount = ({price, discountPercentage}) =>{

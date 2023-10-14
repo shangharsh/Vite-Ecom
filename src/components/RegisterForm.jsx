@@ -22,7 +22,7 @@ const RegisterForm = () => {
     .then((res) =>{
       console.log(res);
       if(res.data.status){
-        navigate('/login');
+        navigate('/');
         successToast(res.data.message);
       }
     })
