@@ -6,7 +6,7 @@ const SecureRoute = () => {
     const loggedIn = Boolean(isLoggedIn);
   return (
     <div>
-        {loggedIn? <Outlet/> : <Navigate to='/login'/>}
+        {loggedIn? <Outlet/> : <Navigate to='/'/>}
     </div>
   )
 }
