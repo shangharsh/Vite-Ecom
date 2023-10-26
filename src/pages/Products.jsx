@@ -9,6 +9,7 @@ import ViewProduct from '../components/ViewProduct';
 import { successToast } from '../services/toast.service';
 import { useNavigate } from 'react-router-dom';
 import ProductContext from '../context/ProductContext';
+import GlobalContext from '../context/GlobalContext';
 
 const Products = () => {
 
@@ -174,6 +175,7 @@ const handleLogOut = () =>{
   navigate('/');
   successToast('Logout Successfully.')
 }
+
 
   return (
       <>
