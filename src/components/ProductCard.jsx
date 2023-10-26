@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {Card,CardHeader,CardBody,CardFooter,Button} from 'react-bootstrap';
 import { returnTotal } from '../utils/helper';
+import ProductContext from '../context/ProductContext';
 
 
-const ProductCard = ({product, deleteHandler,editHandler, viewHandler}) => {
-    
+const ProductCard = () => {
+  const {product, deleteHandler,editHandler, viewHandler} = useContext(ProductContext);
   return (
     <Card key={product.id} style={{width:'18rem', height:'380px'}}>
         <CardHeader className='w-100 h-50'>

@@ -8,6 +8,7 @@ import EditProduct from '../components/EditProduct';
 import ViewProduct from '../components/ViewProduct';
 import { successToast } from '../services/toast.service';
 import { useNavigate } from 'react-router-dom';
+import ProductContext from '../context/ProductContext';
 
 const Products = () => {
 
@@ -200,7 +201,11 @@ const handleLogOut = () =>{
         <Loader/>
       ) : (
         products.map((product)=>{
-          return <ProductCard key={product.id} product={product} deleteHandler={deleteHandler} editHandler={editHandler} viewHandler={viewHandler}/>
+          return (
+            <ProductContext.Provider value={{product,deleteHandler,editHandler,viewHandler}}>
+              <ProductCard key={product.id}/>
+            </ProductContext.Provider>
+          )
         }))}
     </div>
       </>
