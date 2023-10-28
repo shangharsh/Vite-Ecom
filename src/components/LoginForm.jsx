@@ -5,12 +5,16 @@ import {useState} from 'react';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
 import { errorToast, successToast } from '../services/toast.service';
+import {useDispatch} from 'react-redux';
+import {login} from '../slice/authSlice'
 
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
 
   function handleSubmit(e){
     e.preventDefault();
@@ -21,15 +25,14 @@ const Login = () => {
     
     axios.post('https://backend-mu-pied.vercel.app/users/login',data)
     .then((res) => {
-      console.log(res)
       if(res.data.status){
+        dispatch(login(res.data.data.jwt));
         localStorage.setItem('isLoggedIn', true);
         navigate('/products');
         successToast(res.data.message);
       }
     })
     .catch((err) => {
-      console.log(err.message)
       errorToast(err.message);
     });
   }

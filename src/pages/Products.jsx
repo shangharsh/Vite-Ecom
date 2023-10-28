@@ -99,7 +99,6 @@ const handleChange = (e) =>{
   setProduct((prev)=>{
     return {...prev, [e.target.name]: e.target.value };
   });
-  console.log(product)
 };
 
 const addProductHandler =(e)=>{
@@ -131,7 +130,6 @@ const handleEditChange = (e) =>{
 
 const editProductHandler =(e, id)=>{
   e.preventDefault();
-  console.log(id)
   const finalData = products.map((prod)=>{
     return prod.id === id? editedProduct : prod;
   })
