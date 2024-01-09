@@ -14,7 +14,7 @@ const ProductCard = () => {
     <Card key={product.id} style={{width:'18rem', height:'380px'}}>
         <CardHeader className='w-100 h-50'>
           <img src={product.thumbnail} alt='product-image' className='w-100 h-75' />
-          <h6 className='pt-3'>{product.title} {name[3].name}</h6>
+          <h6 className='pt-3'>{product.title}</h6>
         </CardHeader>
         <CardBody>
           <div className='costContainer d-flex justify-content-between align-items-center'>
